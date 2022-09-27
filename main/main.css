@@ -1,0 +1,21 @@
+.game {
+  width: 720px;
+  border: solid 1px #ddd;
+  margin: 0 auto;
+  background: #89cfef;
+  text-align: center;
+  min-height: 430px;
+}
+.player {
+  width: 40%;
+  border: solid 5px #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  margin: 1%;
+  vertical-align: top;
+  background: #f5f5f5;
+}
+.player.active {
+  border: solid 5px #222;
+}
