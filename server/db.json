@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Micheal Jordan"
+    "name": "Michael Jordan"
   },
   {
     "id": 2,
@@ -38,45 +38,5 @@
   {
     "id": 10,
     "name": "Jimmy Butler"
-  },
-  {
-    "id": 11,
-    "name": "Shaquille O'neil"
-  },
-  {
-    "id": 12,
-    "name": "Duncan Robinson"
-  },
-  {
-    "id": 13,
-    "name": "Jayson Tatum"
-  },
-  {
-    "id": 14,
-    "name": "JJ Redick"
-  },
-  {
-    "id": 15,
-    "name": "Donovan Mitchell"
-  },
-  {
-    "id": 16,
-    "name": "Ben Simmons"
-  },
-  {
-    "id": 17,
-    "name": "Paul George"
-  },
-  {
-    "id": 18,
-    "name": "Blake Griffen"
-  },
-  {
-    "id": 19,
-    "name": "Draymond Green"
-  },
-  {
-    "id": 20,
-    "name": "Jordan Clarkson"
   }
 ]
