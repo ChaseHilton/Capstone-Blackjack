@@ -199,6 +199,8 @@ const showLeaderBoard = document.querySelector('#showLeaderBoard');
 
 const addButton = document.querySelector('#addName');
 
+const showNamesbtn = document.querySelector('#showNames');
+
 const getAllNames = () => {
   axios
     .get(`${baseURL}/getLeaderBoard`)
@@ -237,7 +239,7 @@ const deleteName = (id) => {
 };
 
 const addNameLeaderBoard = () => {
-  let addPlayer = document.querySelector('#addPlayer');
+  let addPlayer = document.querySelector('#nameInput');
 
   let newPlayer = {
     name: addPlayer.value,
@@ -254,4 +256,4 @@ const addNameLeaderBoard = () => {
 
 addButton.addEventListener('click', addNameLeaderBoard);
 
-getAllNames();
+showNamesbtn.addEventListener('click', getAllNames);
