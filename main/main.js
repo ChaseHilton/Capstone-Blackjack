@@ -201,11 +201,37 @@ const getAllNames = () => {
   axios
     .get(`${baseURL}/getLeaderBoard`)
     .then((res) => {
+      displayLeaderBoard(res.data);
       console.log(res.data);
     })
     .catch((err) => {
       console.log(err);
     });
+};
+
+const displayLeaderBoard = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    createLeaderBoard(arr[i]);
+  }
+};
+
+const createLeaderBoard = (leaderBoardName) => {
+  const leaderBoardDisplay = document.createElement('section');
+  leaderBoardDisplay.classList.add('leaderBoard');
+
+  leaderBoardDisplay.innerHTML = `
+    <p>${leaderBoardName.name}<p>
+    <button onclick="deleteName(${leaderBoardName.id})">Delete</button>
+  `;
+  console.log(leaderBoardName.name);
+  showLeaderBoard.appendChild(leaderBoardDisplay);
+};
+
+const deleteName = (id) => {
+  axios.delete(`${baseURL}/deleteName/${id}`).then((res) => {
+    showLeaderBoard.innerHTML = '';
+    displayLeaderBoard(res.data);
+  });
 };
 
 getAllNames();
