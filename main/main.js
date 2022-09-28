@@ -197,6 +197,8 @@ const baseURL = 'http://localhost:4000';
 
 const showLeaderBoard = document.querySelector('#showLeaderBoard');
 
+const addButton = document.querySelector('#addName');
+
 const getAllNames = () => {
   axios
     .get(`${baseURL}/getLeaderBoard`)
@@ -233,5 +235,23 @@ const deleteName = (id) => {
     displayLeaderBoard(res.data);
   });
 };
+
+const addNameLeaderBoard = () => {
+  let addPlayer = document.querySelector('#addPlayer');
+
+  let newPlayer = {
+    name: addPlayer.value,
+  };
+
+  axios.post(`${baseURL}/addName`, newPlayer).then((res) => {
+    showLeaderBoard.innerHTML = '';
+
+    addPlayer.value = '';
+
+    displayLeaderBoard(res.data);
+  });
+};
+
+addButton.addEventListener('click', addNameLeaderBoard);
 
 getAllNames();
