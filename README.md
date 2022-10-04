@@ -1,4 +1,4 @@
-# capstoneV2
+# Capstone-BlackJack
 
 
 This project was created to allow two users on the same computer to play BlackJack with each other.
