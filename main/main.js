@@ -49,8 +49,7 @@ function createPlayersUI() {
 }
 
 function shuffle() {
-  // for 1000 turns
-  // switch the values of two random cards
+  
   for (let i = 0; i < 1000; i++) {
     let location1 = Math.floor(Math.random() * deck.length);
     let location2 = Math.floor(Math.random() * deck.length);
@@ -64,7 +63,7 @@ function shuffle() {
 function startblackjack() {
   document.getElementById('btnStart').value = 'Restart';
   document.getElementById('status').style.display = 'none';
-  // deal 2 cards to every player object
+  
   currentPlayer = 0;
   createDeck();
   shuffle();
@@ -75,13 +74,12 @@ function startblackjack() {
 }
 
 function dealHands() {
-  // alternate handing cards to each player
-  // 2 cards each
+  
   for (let i = 0; i < 2; i++) {
     for (let x = 0; x < players.length; x++) {
       let card = deck.pop();
       players[x].Hand.push(card);
-      // renderCard(card, x);
+     
       updatePoints();
     }
   }
@@ -89,31 +87,7 @@ function dealHands() {
   updateDeck();
 }
 
-// function renderCard(card, player)
-// {
-//     let hand = document.getElementById('hand_' + player);
-//     hand.appendChild(getCardUI(card));
-// }
 
-// function getCardUI(card)
-// {
-//     let el = document.createElement('div');
-//     let icon = '';
-//     if (card.Suit == 'Hearts')
-//     icon='&hearts;';
-//     else if (card.Suit == 'Spades')
-//     icon = '&spades;';
-//     else if (card.Suit == 'Diamonds')
-//     icon = '&diams;';
-//     else
-//     icon = '&clubs;';
-
-//     el.className = 'card';
-//     el.innerHTML = card.Value + '<br/>' + icon;
-//     return el;
-// }
-
-// returns the number of points that a player has in hand
 function getPoints(player) {
   let points = 0;
   for (let i = 0; i < players[player].Hand.length; i++) {
@@ -131,11 +105,10 @@ function updatePoints() {
 }
 
 function hitMe() {
-  // pop a card from the deck to the current player
-  // check if current player new points are over 21
+  
   let card = deck.pop();
   players[currentPlayer].Hand.push(card);
-  // renderCard(card, currentPlayer);
+  
 
   updatePoints();
   updateDeck();
@@ -143,7 +116,7 @@ function hitMe() {
 }
 
 function stay() {
-  // move on to next player, if any
+  
   if (currentPlayer != players.length - 1) {
     document
       .getElementById('player_' + currentPlayer)
@@ -191,7 +164,7 @@ window.addEventListener('load', function () {
   createPlayers(1);
 });
 
-/////////////////
+
 
 const baseURL = 'http://localhost:4000';
 
